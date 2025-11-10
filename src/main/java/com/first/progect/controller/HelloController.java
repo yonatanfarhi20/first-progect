@@ -7,11 +7,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/hello")
+@RequestMapping("/api")
 public class HelloController {
 
-    @RequestMapping(value = "", method = RequestMethod.GET)
+    @RequestMapping(value = "/hello", method = RequestMethod.GET)
     public ResponseEntity<?> hello(){
         return new ResponseEntity<>("Hello World!", HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/bye", method = RequestMethod.GET)
+    public ResponseEntity<?> bye(){
+        return new ResponseEntity<>("bye World!", HttpStatus.OK);
     }
 }
